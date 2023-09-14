@@ -11,4 +11,14 @@ public class Test {
         double[] expectedTemperaturas = { 2, 2, 2, 2, 2, 2, 3 };
         assertArrayEquals(expectedTemperaturas, temperaturas, 0.01);
     }
+
+    @org.junit.Test
+    public void testCalcularMedia() {
+        double[] numeros = { 2, 2, 2, 2, 2, 2, 3 };
+
+        double media = CalcularMedia.calcularMedia(numeros);
+
+        double resultadoEsperado = 15.0 /7.0;
+        assertEquals(resultadoEsperado, media, 0.001);
+    }
 }
