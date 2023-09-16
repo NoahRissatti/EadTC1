@@ -21,4 +21,15 @@ public class Test {
         double resultadoEsperado = 15.0 /7.0;
         assertEquals(resultadoEsperado, media, 0.001);
     }
+
+    @org.junit.Test
+    public void testCalcularAcimaDaMedia() {
+        double[] numeros = { 2, 2, 2, 2, 2, 2, 3 };
+
+        double media = 15.0 /7.0;
+
+        double resultadoEsperado = 1;
+        double resultadoObtido = CalcularAcimaDaMedia.calcularAcimaDaMedia(numeros,media);
+        assertEquals(resultadoEsperado, resultadoObtido, 0.001);
+    }
 }
