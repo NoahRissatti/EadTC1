@@ -1,11 +1,7 @@
 import java.util.Scanner;
 
 public class GuardarTemperatura {
-    public static Object lerTemperaturas(String temperaturasStr) {
-        if (!temperaturasStr.contains(" ")) {
-            return "Erro";
-        }
-
+    public static double[] lerTemperaturas(String temperaturasStr) {
         String[] temperaturasArray = temperaturasStr.split(" ");
         int tamanho = temperaturasArray.length;
         double[] temperaturas = new double[tamanho];

@@ -15,10 +15,10 @@ public class Test {
     public void testGuardarTemperaturasSemEspacoEntre() {
         String input = "2222223";
 
-        String temperaturas = (String) GuardarTemperatura.lerTemperaturas(input);
+        String inputVerificado = VerificaEntrada.verificarEspacos(input);
 
         String expectedMessage = "Erro";
-        assertEquals(expectedMessage, temperaturas);
+        assertEquals(expectedMessage, inputVerificado);
     }
 
     @org.junit.jupiter.api.Test
