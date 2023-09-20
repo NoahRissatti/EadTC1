@@ -1,18 +1,15 @@
 import java.util.Scanner;
 
 public class GuardarTemperatura {
-    public static double[] lerTemperaturas() {
-        Scanner scanner = new Scanner(System.in);
-        int tamanho = 7;
+    public static double[] lerTemperaturas(String temperaturasStr) {
+        String[] temperaturasArray = temperaturasStr.split(" ");
+        int tamanho = temperaturasArray.length;
         double[] temperaturas = new double[tamanho];
 
-        System.out.print("Digite as 7 temperaturas separadas por espaço: ");
-
         for (int i = 0; i < tamanho; i++) {
-            temperaturas[i] = scanner.nextDouble();
+            temperaturas[i] = Double.parseDouble(temperaturasArray[i]);
         }
 
-        scanner.close();
         return temperaturas;
     }
 }
