@@ -32,4 +32,17 @@ public class Test {
         double resultadoObtido = CalcularAcimaDaMedia.calcularAcimaDaMedia(numeros,media);
         assertEquals(resultadoEsperado, resultadoObtido, 0.001);
     }
+
+    @org.junit.Test
+    public void testReceberArrayERetornarNumeroAcimaDaMedia() {
+        String input = "2 2 2 2 2 2 3";
+        System.setIn(new java.io.ByteArrayInputStream(input.getBytes()));
+
+        double[] temperaturas = GuardarTemperatura.lerTemperaturas();
+        double media = CalcularMedia.calcularMedia(temperaturas);
+        double resultadoObtido = CalcularAcimaDaMedia.calcularAcimaDaMedia(temperaturas,media);
+
+        double resultadoEsperado = 1;
+        assertEquals(resultadoEsperado, resultadoObtido, 0.001);
+    }
 }
