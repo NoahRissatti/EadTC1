@@ -7,7 +7,7 @@ public class Main {
         System.out.print("Digite as temperaturas separadas por espaço: ");
         String temperaturasStr = scanner.nextLine();
 
-        double[] temperaturas = GuardarTemperatura.lerTemperaturas(temperaturasStr);
+        double[] temperaturas = (double[]) GuardarTemperatura.lerTemperaturas(temperaturasStr);
 
         double media = CalcularMedia.calcularMedia(temperaturas);
         double temperaturasAcima = CalcularAcimaDaMedia.calcularAcimaDaMedia(temperaturas,media);

@@ -5,10 +5,20 @@ public class Test {
     public void testGuardarTemperaturas() {
         String input = "2 2 2 2 2 2 3";
 
-        double[] temperaturas = GuardarTemperatura.lerTemperaturas(input);
+        double[] temperaturas = (double[]) GuardarTemperatura.lerTemperaturas(input);
 
         double[] expectedTemperaturas = { 2, 2, 2, 2, 2, 2, 3 };
         assertArrayEquals(expectedTemperaturas, temperaturas, 0.01);
+    }
+
+    @org.junit.jupiter.api.Test
+    public void testGuardarTemperaturasSemEspacoEntre() {
+        String input = "2222223";
+
+        String temperaturas = (String) GuardarTemperatura.lerTemperaturas(input);
+
+        String expectedMessage = "Erro";
+        assertEquals(expectedMessage, temperaturas);
     }
 
     @org.junit.jupiter.api.Test
@@ -36,7 +46,7 @@ public class Test {
     public void testReceberArrayERetornarNumeroAcimaDaMedia() {
         String input = "2 2 2 2 2 2 3";
 
-        double[] temperaturas = GuardarTemperatura.lerTemperaturas(input);
+        double[] temperaturas = (double[]) GuardarTemperatura.lerTemperaturas(input);
         double media = CalcularMedia.calcularMedia(temperaturas);
         double resultadoObtido = CalcularAcimaDaMedia.calcularAcimaDaMedia(temperaturas,media);
 
