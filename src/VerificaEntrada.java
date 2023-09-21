@@ -1,17 +1,18 @@
 public class VerificaEntrada {
-    public static String verificaEspacos(String inputString) {
-        if (inputString.contains(" ")) {
-            return inputString;
-        } else {
-            return "Erro";
-        }
-    }
+    public static String verificarEntrada(String input) {
+        String[] partes = input.split(" ");
 
-    public static String verificaPossuiSeteNumeros(String inputString) {
-        if (inputString.matches("\\d{7}")) {
-            return inputString;
-        } else {
+        if (partes.length != 7) {
             return "Erro";
         }
+
+        try {
+            for (String parte : partes) {
+                Double.parseDouble(parte);
+            }
+        } catch (NumberFormatException e) {
+            return "Erro";
+        }
+        return input;
     }
 }
