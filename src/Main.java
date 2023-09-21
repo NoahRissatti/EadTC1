@@ -7,11 +7,17 @@ public class Main {
         System.out.print("Digite as temperaturas separadas por espaço: ");
         String temperaturasStr = scanner.nextLine();
 
-        double[] temperaturas = (double[]) GuardarTemperatura.lerTemperaturas(temperaturasStr);
+        String inputVerificado = VerificaEntrada.verificarEntrada(temperaturasStr);
 
-        double media = CalcularMedia.calcularMedia(temperaturas);
-        double temperaturasAcima = CalcularAcimaDaMedia.calcularAcimaDaMedia(temperaturas,media);
-        System.out.println(temperaturasAcima);
+        if ("Erro".equals(inputVerificado)) {
+            System.out.println("Erro");
+        } else {
+            double[] temperaturas =  GuardarTemperatura.lerTemperaturas(inputVerificado);
+
+            double media = CalcularMedia.calcularMedia(temperaturas);
+            double temperaturasAcima = CalcularAcimaDaMedia.calcularAcimaDaMedia(temperaturas, media);
+            System.out.println(temperaturasAcima);
+        }
 
         scanner.close();
     }}
